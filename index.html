@@ -90,7 +90,7 @@
 <dl class="bill"><div><dt>Проживання</dt><dd>номери в готелі</dd></div><div><dt>Кухня</dt><dd>українська</dd></div><div><dt>Адреса</dt><dd>вул. Драгоманова, 5</dd></div><div><dt>Телефон</dt><dd><a href="tel:+380962849188">+38 096 284 91 88</a></dd></div></dl>
 <div class="actions"><a class="btn line" href="tel:+380962849188">Зателефонувати</a></div>
 </div>
-<form class="book" data-hotelos data-form-name="Запит на проживання" novalidate><p class="book-title">Перевірити вільні дати</p><div class="book-fields"><label class="field">Дата заїзду<input name="checkIn" type="date"></label><label class="field">Дата виїзду<input name="checkOut" type="date" aria-describedby="stay-checkout-error"><span id="stay-checkout-error" data-error-for="checkOut"></span></label><label class="field">Гостей<input name="guests" type="number" min="1" max="50" inputmode="numeric"></label><label class="field phone-f">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="stay-phone-error"><span id="stay-phone-error" data-error-for="phone"></span></label><button class="btn" type="submit">Надіслати запит</button></div><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><p class="book-note">Обов’язковий лише телефон — передзвонимо, перевіримо вільні номери й вартість.</p><p data-status role="status" aria-live="polite"></p></form></div></section>
+<form class="book" data-hotelos data-form-name="Запит на проживання" novalidate><p class="book-title">Перевірити вільні дати</p><div class="book-fields"><label class="field">Дата заїзду<input name="checkIn" type="date"></label><label class="field">Дата виїзду<input name="checkOut" type="date" aria-describedby="stay-checkout-error"><span id="stay-checkout-error" data-error-for="checkOut"></span></label><label class="field">Гостей<input name="guests" type="number" min="1" max="300" inputmode="numeric"></label><label class="field phone-f">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="stay-phone-error"><span id="stay-phone-error" data-error-for="phone"></span></label><button class="btn" type="submit">Надіслати запит</button></div><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><p class="book-note">Обов’язковий лише телефон — передзвонимо, перевіримо вільні номери й вартість.</p><p data-status role="status" aria-live="polite"></p></form></div></section>
 
 <section class="section stay" id="stay"><div class="wrap"><div class="reveal"><h2 class="title">Зупинитися й поїсти</h2><p class="lead">Проживання та страви української кухні — в одному готелі.</p></div>
 <div class="rows"><article class="row reveal"><figure class="media"><img src="images/room.jpg" alt="Номер у готелі «Бахус»" loading="lazy" width="1440" height="960"></figure><div><h3>Ночівля у Кам’янці</h3><p>Готель на вулиці Драгоманова, у межах міста. Вільні номери й вартість підкажемо за телефоном.</p><a class="link" href="#stay-request">Запитати про номер</a></div></article>
@@ -226,7 +226,7 @@ function setup(form) {
 			if (value) lead[name] = value;
 		}
 		const guests = parseInt(field('guests')?.value, 10);
-		if (guests >= 1 && guests <= 50) lead.guests = guests;
+		if (guests >= 1 && guests <= 300) lead.guests = guests;
 		if (genderSelects.length) lead.genders = genderSelects.map((select) => select.value);
 
 		submit.disabled = true;
